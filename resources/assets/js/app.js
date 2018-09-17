@@ -10,25 +10,26 @@ require('./bootstrap');
 window.Vue = require('vue');
 import VueCarousel from 'vue-carousel';
 import BootstrapVue from 'bootstrap-vue';
+// import { Image } from 'bootstrap-vue/es/components';
+// import RangeSlider from 'vue-range-slider';
+
+// Vue.use(Image);
+// Vue.use(RangeSlider);
+// import VueLazyload from 'vue-lazyload';
 
 Vue.use(VueCarousel);
 Vue.use(BootstrapVue);
-// Vue.use(Modal);
-
-// import Buefy from 'buefy'
-
-// Vue.use(Buefy)
-
+// Vue.use(VueLazyload);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- 
 Vue.component('home-carousel', require('./components/HomeCarousel.vue'));
 Vue.component('product-carousel', require('./components/ProductCarousel.vue'));
 Vue.component('product-card', require('./components/ProductCard.vue'));
+// Vue.component('range-slider', RangeSlider);
 
 const app = new Vue({
     el: '#app',
@@ -36,7 +37,8 @@ const app = new Vue({
     data () {
     	return {
             navIsOpen: false,
-            navbarStuck: false
+            navbarStuck: false,
+            sliderValue: 2000,
     	}
     },
 

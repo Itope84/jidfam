@@ -17,6 +17,8 @@
         <!-- Page Content-->
         
         @yield('content')
+
+        @include('partials.footer')
         
       </div>
       <!-- Back To Top Button-->
@@ -28,6 +30,7 @@
 
      <script>
       window.addEventListener('DOMContentLoaded', function(){ 
+        // console.info(performance.navigation.type)
         performance.navigation.type === 1 ? window.scrollTo(0, 0) : null;
       })
     </script>

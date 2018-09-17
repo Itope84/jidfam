@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductCollection;
@@ -17,8 +18,9 @@ class ProductController extends Controller
     public function index()
     {
         // return new ProductCollection(Product::select('name', 'description')->paginate(120));
-        $products = Product::paginate(120);
-        return view('catalog', compact('products'));
+        $products = Product::paginate(18);
+        $categories = Category::all();
+        return view('products', compact('products', 'categories'));
     }
 
     /**

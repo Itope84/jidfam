@@ -6,6 +6,7 @@
 
 $site-red: #ed3237;
 $site-blue: #3e4095;
+$site-yellow: #b5771e;
 
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
@@ -13,7 +14,7 @@ $site-blue: #3e4095;
 // Bootstrap
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
-
+// @import '~vue-range-slider/dist/vue-range-slider.css';
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900");
 .sub-menu,
 .toolbar-dropdown {
@@ -6031,15 +6032,12 @@ video {
     background-size: 74px
 }
 
-.isotope-grid:not(.filter-grid)>.grid-item {
-    display: none
-}
 
 .isotope-grid:not(.filter-grid)[style] {
     background: none
 }
 
-.isotope-grid:not(.filter-grid)[style]>.grid-item {
+.isotope-grid:not(.filter-grid)>.grid-item {
     display: inline-block;
     -webkit-animation: showGrid .6s;
     animation: showGrid .6s
@@ -8561,7 +8559,7 @@ div.cart.cart-menu {
   padding-top: .5rem;
 }
 
-.icon-search, .icon-shopping-basket {
+.icon-search, .icon-shopping-basket, .icon-person, .icon-user {
   width: 1.3rem;
   height: 1.3rem;
 }
@@ -8601,5 +8599,13 @@ div.cart.cart-menu {
     width: 100%;
     height: 100%;
     bottom: 0;
-    background-color: #EFD;
+    // background-color: #EFD;
+}
+
+.site-menu ul > li.active > a, .site-menu ul > li:hover > a  {
+    color: $site-blue;
+}
+
+.site-menu ul > li.active > a {
+    border-top-color: $site-blue;
 }

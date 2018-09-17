@@ -15896,15 +15896,11 @@ video {
   background-size: 74px;
 }
 
-.isotope-grid:not(.filter-grid) > .grid-item {
-  display: none;
-}
-
 .isotope-grid:not(.filter-grid)[style] {
   background: none;
 }
 
-.isotope-grid:not(.filter-grid)[style] > .grid-item {
+.isotope-grid:not(.filter-grid) > .grid-item {
   display: inline-block;
   -webkit-animation: showGrid .6s;
   animation: showGrid .6s;
@@ -18519,7 +18515,9 @@ div.cart.cart-menu {
 }
 
 .icon-search,
-.icon-shopping-basket {
+.icon-shopping-basket,
+.icon-person,
+.icon-user {
   width: 1.3rem;
   height: 1.3rem;
 }
@@ -18560,6 +18558,14 @@ div.cart.cart-menu {
   width: 100%;
   height: 100%;
   bottom: 0;
-  background-color: #EFD;
+}
+
+.site-menu ul > li.active > a,
+.site-menu ul > li:hover > a {
+  color: #3e4095;
+}
+
+.site-menu ul > li.active > a {
+  border-top-color: #3e4095;
 }
 

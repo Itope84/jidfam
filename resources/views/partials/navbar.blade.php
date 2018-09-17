@@ -105,7 +105,7 @@
             <li class="active"><a href="index.html"><span>Home</span></a>
               
             </li>
-            <li><a href="shop-grid-ls.html"><span>Shop</span></a>
+            <li><a href="shop-grid-ls.html"><span>Products</span></a>
             </li>
             
             <li><a href="blog-rs.html"><span>Consultancy</span></a>
@@ -123,7 +123,7 @@
           <div class="inner">
             <div class="tools">
               <div class="search"><i class="icon-search"></i></div>
-              <div class="account"><a href="account-orders.html"></a><i class="icon-head"></i>
+              <div class="account"><a href="account-orders.html"></a><i class="icon-person" style="margin-bottom: -.8rem; width: 1.5rem; height: 1.5rem;"></i>
                 <ul class="toolbar-dropdown">
                   <li class="sub-menu-user">
                     <div class="user-ava"><img src="img/account/user-ava-sm.jpg" alt="Daniel Adams">

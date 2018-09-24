@@ -8613,3 +8613,17 @@ div.cart.cart-menu {
 .offcanvas-container {
     background-color: $site-blue;
 }
+
+.input-group > .form-control, .input-group > .custom-select, .input-group > .custom-file {
+    width: 60%;
+    margin-bottom: 0;
+}
+
+.modal-dialog.modal-md {
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+h5.description {
+    border-bottom: 2px solid $site-blue;
+}

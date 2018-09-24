@@ -29,7 +29,7 @@ Vue.use(BootstrapVue);
 Vue.component('home-carousel', require('./components/HomeCarousel.vue'));
 Vue.component('product-carousel', require('./components/ProductCarousel.vue'));
 Vue.component('product-card', require('./components/ProductCard.vue'));
-// Vue.component('range-slider', RangeSlider);
+Vue.component('product-modal', require('./components/ProductModal.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -39,6 +39,8 @@ const app = new Vue({
             navIsOpen: false,
             navbarStuck: false,
             sliderValue: 2000,
+            activeProductId: null,
+            isProductModalVisible: false,
     	}
     },
 
@@ -55,6 +57,11 @@ const app = new Vue({
         handleScroll() {
             this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
             this.navbarStuck = this.offsetTop > document.querySelector('.topbar').offsetHeight
+        },
+
+        showProductModal(id) {
+            this.activeProductId = id
+            this.isProductModalVisible = true
         }
     }
 });

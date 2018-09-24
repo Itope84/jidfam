@@ -54,8 +54,16 @@
                   <h4 class="product-price">
                     &#8358;{{$product->price}}
                   </h4>
+
                   
+                  
+                  <product-modal :product-id="{{$product->id}}" :modal-show="isProductModalVisible">
+                  
+                  </product-modal>
+
                 </product-card>
+
+                
               </div>
               @endforeach
             </div>
@@ -97,11 +105,5 @@
           </div>
         </div>
       </div>
-
-@endsection
-
-@section('javascripts')
-
-
 
 @endsection

@@ -65,11 +65,11 @@
               <div class="card mb-30">
                 <a class="card-img-tiles" href="shop-grid-ls.html">
                   <div class="inner">
-                    <div class="main-img"><b-img-lazy blank-src="{{asset('img/puff.svg')}}" src="{{$category->default_image}}" alt="Category"></div>
+                    <div class="main-img"><b-img-lazy blank-src="{{asset('img/puff.svg')}}" src="{{$category->getDefaultImageUrl()}}" alt="Category"></div>
                     <div class="thumblist px-0">
                       @foreach($category['products'] as $product)
                         <div class="m-1">
-                          <b-img-lazy blank-src="{{ asset('img/puff.svg') }}" src="{{$product->image}}" class="w-100" alt="Category">
+                          <b-img-lazy blank-src="{{ asset('img/puff.svg') }}" src="{{$product->getImagesUrl()[0]->url}}" class="w-100" alt="Category">
                         </div>
                       @endforeach
                     </div>
@@ -114,7 +114,7 @@
                   <div class="dummy" style="
                     margin-top: 100%;
                 "></div>
-                  <b-img-lazy blank-src="{{ asset('/img/puff.svg') }}" src="{{$product->image}}" alt="Product" />
+                  <b-img-lazy blank-src="{{ asset('/img/puff.svg') }}" src="{{$product->getImagesUrl()[0]->url}}" alt="Product" />
                 </a>
                 <h3 class="product-title"><a href="shop-single.html">{{$product->name}}</a></h3>
                 <h4 class="product-price">

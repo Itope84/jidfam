@@ -48,7 +48,7 @@
                 <product-card>
                   <a class="product-thumb" href="shop-single.html">
                   <div class="dummy" style="margin-top: 100%;"></div>
-                    <b-img-lazy blank-src="{{ asset('/img/puff.svg') }}" src="{{$product->image}}" alt="{{$product->name}}" />
+                    <b-img-lazy blank-src="{{ asset('/img/puff.svg') }}" src="{{$product->getImagesUrl()[0]->url}}" alt="{{$product->name}}" />
                   </a>
                   <h3 class="product-title"><a href="shop-single.html">{{$product->name}}</a></h3>
                   <h4 class="product-price">
@@ -97,5 +97,11 @@
           </div>
         </div>
       </div>
+
+@endsection
+
+@section('javascripts')
+
+
 
 @endsection

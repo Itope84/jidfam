@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->take(3)->get();
+        $categories = Category::latest()->with([])->take(3)->get();
         foreach ($categories as $category) {
             $category['products'] = $category->products->sortByDesc('updated_at')->take(2)->values()->all();
         }

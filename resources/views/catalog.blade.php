@@ -10,7 +10,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="{{asset($product->image)}}" alt="Placeholder image">
+            <img src="{{$product->getImagesUrl()[0]->url}}" alt="Placeholder image">
           </figure>
         </div>
         <div class="card-content">

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -14,6 +15,24 @@ class Product extends Model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
+
+
+
+    /**
+     * @return string
+     */
+    public function getImagesUrl()
+    {
+        
+		    $files = DB::table('media')->whereModelType('App\Product')->whereCollectionName('images')->whereModelId($this->id)->get();
+		    foreach ($files as $file) {
+		    	$file->url = asset('storage/'.$file->order_column.'/'.$file->file_name);
+		    }
+		    return $files;
+		    
+    }
+
+
 	public function orders()
 	{
 		// hasMany(RelatedModel, foreignKeyOnRelatedModel = product_id, localKey = id)

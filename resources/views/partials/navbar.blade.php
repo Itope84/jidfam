@@ -13,9 +13,20 @@
         
           <nav class="offcanvas-menu">
             <ul class="menu">
+              <li>
+                <span>
+                  <a href="index.html" class="site-logo w-100" style="
+                      background-color: #fff;
+                  "><img src="http://jidfam.local/img/jidfam-logo.png" alt="JIdfam Healthcare" style="
+                      max-width: 120px;
+                      margin-left: auto;
+                      margin-right: auto;
+                  "></a>
+                </span>
+              </li>
               <li class="active"><span><a href="#"><span>Home</span></a></span>
               </li>
-              <li class=""><span><a href="#"><span>Shop</span></a><span class="sub-menu-toggle"></span></span>
+              <li class=""><span><a href="{{ route('products') }}"><span>Shop</span></a><span class="sub-menu-toggle"></span></span>
                 
               </li>
 
@@ -96,16 +107,17 @@
               <span class=" icon-menu"></span>
             </a>
             <!-- Site Logo-->
-            <a class="site-logo" href="index.html"><img src="{{ asset('img/jidfam-logo.png') }}" alt="Unishop"></a>
+            <a class="site-logo" href="index.html"><img src="{{ asset('img/jidfam-logo.png') }}" alt="Jidfam Healthcare"></a>
           </div>
         </div>
         <!-- Main Navigation-->
         <nav class="site-menu">
           <ul>
-            <li class="active"><a href="index.html"><span>Home</span></a>
+
+            <li class="@isset($active) @if($active == 'home') active @endif @else active @endisset"><a href="index.html"><span>Home</span></a>
               
             </li>
-            <li><a href="shop-grid-ls.html"><span>Products</span></a>
+            <li><a href="{{ route('products') }}" class="@if(isset($active) && $active == 'products') active @endif"><span>Products</span></a>
             </li>
             
             <li><a href="blog-rs.html"><span>Consultancy</span></a>

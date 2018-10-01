@@ -20,7 +20,8 @@ class ProductController extends Controller
         // return new ProductCollection(Product::select('name', 'description')->paginate(120));
         $products = Product::paginate(18);
         $categories = Category::all();
-        return view('products', compact('products', 'categories'));
+        $active = 'products';
+        return view('products', compact('products', 'categories', 'active'));
     }
 
     /**
@@ -52,8 +53,30 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        ProductResource::withoutWrapping();
-        return new ProductResource($product);
+        // ProductResource::withoutWrapping();
+        // return new ProductResource($product);
+        
+        $similar_products = [];
+        
+        foreach ($product->category->products as $prod) {
+            if ($prod->id != $product->id) {
+                $similar_products[$prod->id] = $prod;
+            }
+            
+        }
+
+
+        foreach ($product->tags as $tag) {
+            foreach ($tag->products as $prod) {
+                if ($prod->id != $product->id) {
+                    $similar_products[$prod->id] = $prod;
+                }
+            }
+        }
+        
+        // dd($similar_products);
+        
+        return view('products.single', compact('product', 'similar_products'));
     }
 
     /**

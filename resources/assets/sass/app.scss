@@ -14,6 +14,7 @@ $site-yellow: #b5771e;
 // Bootstrap
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
+@import '~vue-loading-overlay/dist/vue-loading.css';
 // @import '~vue-range-slider/dist/vue-range-slider.css';
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900");
 .sub-menu,
@@ -8626,4 +8627,61 @@ div.cart.cart-menu {
 
 h5.description {
     border-bottom: 2px solid $site-blue;
+}
+
+.site-search{
+    opacity: 1;
+    visibility: visible;
+}
+
+// .site-search .search-tools{
+//     top: 0;
+//     transform: translateY(50%);
+// }
+
+@media (min-width: 570px) {
+    .w-md-75 {
+        width: 75%;
+    }
+
+    .w-md-50 {
+        width: 50%;
+    }
+}
+
+.alert.alert-dismissible.alert-success {
+    background-color: $site-blue;
+    color: #fff !important;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    max-width: 600px;
+    max-height: 8rem;
+    overflow-y: scroll;
+    z-index: 50000;
+}
+
+.alert.alert-dismissible.alert-success .progress-bar {
+    background-color: lighten($site-blue, 30%) !important
+}
+
+.alert.alert-dismissible.alert-success p {
+    color: #fff;
+}
+
+.page-title {
+    background-color: $site-blue;
+}
+
+.page-title h1 {
+    color: #fff;
+}
+
+.page-title .breadcrumbs > li > a {
+    color: lighten($site-yellow, 30%);
+}
+
+#displayClearCartWarning .modal-dialog {
+    top: 20vh !important;
+    max-width: 500px;
 }

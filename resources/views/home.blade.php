@@ -121,6 +121,9 @@
                   &#8358;{{$product->price}}
                 </h4>
                   
+                <div class="product-buttons">
+                    <a href="{{ route('product.single', ['product'=>$product->id]) }}" class="btn btn-outline-primary btn-sm">View/Add to Cart</a>
+                </div>
               </product-card>
             </slide>
             @endforeach

@@ -10,7 +10,7 @@
           </div>
           <div class="column">
             <ul class="breadcrumbs">
-              <li><a href="index.html">Home</a>
+              <li><a href="/">Home</a>
               </li>
               <li class="separator">&nbsp;</li>
               <li>Products</li>
@@ -55,12 +55,9 @@
                     &#8358;{{$product->price}}
                   </h4>
 
-                  
-                  
-                  <product-modal :product-id="{{$product->id}}" :modal-show="isProductModalVisible">
-                  
-                  </product-modal>
-
+                 <div class="product-buttons">
+                    <a href="{{ route('product.single', ['product'=>$product->id]) }}" class="btn btn-outline-primary btn-sm">View/Add to Cart</a>
+                </div>
                 </product-card>
 
                 

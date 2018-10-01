@@ -24,3 +24,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products', 'ProductController@index')->name('products');
 
 Route::get('/products/{product}', 'ProductController@show')->name('product.single');
+
+Route::get('/api/cart', 'CartController@index')->name('cart');
+
+Route::post('/api/cart/clear', 'CartController@clear')->name('cart.clear');
+
+Route::post('/api/cart', 'CartController@update')->name('cart.update');
+
+Route::get('/user/cart', 'CartController@show')->name('cart.show');
+
+// Route::get('/products/{}')

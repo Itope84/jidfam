@@ -33,6 +33,7 @@ Vue.component('product-carousel', require('./components/ProductCarousel.vue'));
 Vue.component('product-card', require('./components/ProductCard.vue'));
 // Vue.component('product-modal', require('./components/ProductModal.vue'));
 Vue.component('navbar-cart', require('./components/NavbarCart.vue'));
+// Vue.component('cart-item', require('./components/CartItem.vue'));
 Vue.component('loading', Loading);
 
 function sleep(ms) {

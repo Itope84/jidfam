@@ -74,7 +74,7 @@
 
                 <div class="d-flex my-2">
 
-                    <input type="number" value="{{ Auth::user()->orders->where('is_paid', 0)->first()->items->where('product_id',$product->id)->take(1)[0] ? Auth::user()->orders->where('is_paid', 0)->first()->items->where('product_id',$product->id)->take(1)[0]->qty : 0 }}" v-on:change="validateQty({{$product->units}})" class="form-control col rounded-0 rounded-left" name="" v-model="productqty">
+                    <input type="number" v-on:change="validateQty({{$product->units}})" class="form-control col rounded-0 rounded-left" name="" v-model="productqty">
                     <span class="btn btn-secondary col m-0 rounded-0 rounded-right" style="">{{ucfirst(str_plural($product->unit))}}</span>
 
                 </div>

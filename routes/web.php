@@ -33,4 +33,6 @@ Route::post('/api/cart', 'CartController@update')->name('cart.update');
 
 Route::get('/user/cart', 'CartController@show')->name('cart.show');
 
+Route::get('/checkout', 'OrderController@startcheckout');
+
 // Route::get('/products/{}')

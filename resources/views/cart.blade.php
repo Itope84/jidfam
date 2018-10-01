@@ -67,13 +67,7 @@
                 </td>
                 <td class="text-center">
                   <div class="count-input">
-                    <select class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <input type="number" :value="{{$product->qty}}" class="form-control col" />
                   </div>
                 </td>
                 <td class="text-center text-lg text-medium">&#8358;{{$product->product->price}}</td>
@@ -90,8 +84,14 @@
           <div class="column text-lg">Subtotal: <span class="text-medium">$289.68</span></div>
         </div>
         <div class="shopping-cart-footer">
-          <div class="column"><a class="btn btn-outline-secondary" href="{{ route('products') }}"><i class="icon-arrow_back"></i>&nbsp;Back to Shopping</a></div>
-          <div class="column"><a class="btn btn-primary" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success" href="checkout-address.html">Checkout</a></div>
+          
+          <div class="column mr-auto"><a class="btn btn-outline-primary" href="{{ route('products') }}"><i class="icon-arrow_back"></i>&nbsp;BACK TO PRODUCTS</a></div>
+          
+          @if($cart && count($cart->items) > 0)
+          <div class="column">
+            <a class="btn btn-primary" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a>
+            <a class="btn btn-success" href="checkout-address.html">Checkout</a></div>
+          @endif
         </div>
         <!-- Related Products Carousel-->
         <h3 class="text-center padding-top-2x mt-2 padding-bottom-1x">You May Also Like</h3>

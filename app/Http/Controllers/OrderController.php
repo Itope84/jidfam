@@ -33,6 +33,11 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function startcheckout() {
+        return view('checkout');
+    }
+
     public function store(Request $request)
     {
         //

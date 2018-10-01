@@ -18688,3 +18688,11 @@ h5.description {
   max-width: 500px;
 }
 
+.checkout-steps .active {
+  background-color: #3e4095 !important;
+}
+
+.checkout-steps .active .angle::after {
+  border-left-color: #3e4095 !important;
+}
+

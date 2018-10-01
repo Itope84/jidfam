@@ -8685,3 +8685,11 @@ h5.description {
     top: 20vh !important;
     max-width: 500px;
 }
+
+.checkout-steps .active{
+    background-color: $site-blue !important;
+}
+
+.checkout-steps .active .angle::after {
+    border-left-color: $site-blue !important;
+}
